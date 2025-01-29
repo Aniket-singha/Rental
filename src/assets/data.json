@@ -1,0 +1,175 @@
+
+{
+	"data": {
+		"property_list": [
+			{
+				"source": "uniplace",
+				"source_id": "579901",
+				"price": 1900,
+				"available_from": "2025-01-22",
+				"title": "Nice studio in Barbican",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "d7b937bbeeecf114ff099d84fc01d992968c85bc3ba80beb6ab942a158a7c8de"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "579850",
+				"price": 1733,
+				"available_from": "2025-01-22",
+				"title": "Bright studio next to Caledonian Park",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "08fb2092954ca88041db01d7ee060de81a5c1b992a4ad90c9b0fe34b6ff49891"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "580588",
+				"price": 1798,
+				"available_from": "2025-01-22",
+				"title": "Stylish double bedroom in a 2-bed flat close to City of London College",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "e047fe9f7043978aeed5988b42d255fedfb1400e6fc5bfba9bd767bbf2001374"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "579877",
+				"price": 1400,
+				"available_from": "2025-01-22",
+				"title": "Welcoming studio near the Emslie Horniman's Pleasance Park",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "8a75b88596a359baad7bf4625eac61cb65bd5332a496fada8c61bd72222eb096"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "580072",
+				"price": 2210,
+				"available_from": "2025-01-22",
+				"title": "Cute studio close to Aldgate tube station",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "765da4358fa5891d30c84bf7e4717e2d6b4a81e0d5669362ecf5b17a0197c388"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "698515",
+				"price": 2180,
+				"available_from": "2025-01-22",
+				"title": "Delightful studio in Hammersmith",
+				"currency_code": "GBP",
+				"billing_cycle": "nightly",
+				"page_number": "1",
+				"image": "7d1786a7293c079d5c6ce96955fe7d32db3bab45e583401301d1ad39bce42ba8"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "579835",
+				"price": 3029,
+				"available_from": "2025-01-22",
+				"title": "Cool studio close to Holloway Road train station",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "e1aaf8d043df8a161379870b5fe1aa3eddbe9eaf303c10c7898c654fbbc726df"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "686016",
+				"price": 2037,
+				"available_from": "2025-01-22",
+				"title": "Appealing double ensuite bedroom, near the popular London Stadium",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "2e4f62b400267ec5e03f43429f5c0cbd5ea863f517c74ed89fd6efcc9341db4c"
+			},
+			{
+				"source": "uniplace",
+				"source_id": "572926",
+				"price": 2985,
+				"available_from": "2025-01-01",
+				"title": "Elegant studio near the Liverpool Street tube",
+				"currency_code": "GBP",
+				"billing_cycle": "monthly",
+				"page_number": "1",
+				"image": "b8737228e5a4431b1cf31db3f83a4e20ab5badf70c05639846d63eb060ce8cff"
+			}
+		],
+		"total_found": 606,
+		"meta_data": {
+			"meta_data_uniplaces": {
+				"experiment_id": "default-0",
+				"max_price": 960000,
+				"max_query_quality": 8.865191,
+				"min_price": 61500,
+				"price_histogram": {
+					"0": 0,
+					"5000": 0,
+					"10000": 0,
+					"15000": 0,
+					"20000": 0,
+					"25000": 0,
+					"30000": 0,
+					"35000": 0,
+					"40000": 0,
+					"45000": 0,
+					"50000": 0,
+					"55000": 0,
+					"60000": 1,
+					"65000": 1,
+					"70000": 11,
+					"75000": 4,
+					"80000": 18,
+					"85000": 15,
+					"90000": 21,
+					"95000": 24,
+					"100000": 11,
+					"105000": 15,
+					"110000": 18,
+					"115000": 7,
+					"120000": 18,
+					"125000": 19,
+					"130000": 11,
+					"135000": 32,
+					"140000": 12,
+					"145000": 5,
+					"150000": 3,
+					"155000": 4,
+					"160000": 6,
+					"165000": 2,
+					"170000": 4,
+					"175000": 7,
+					"180000": 1,
+					"185000": 3,
+					"190000": 5,
+					"195000": 5,
+					"200000": 1,
+					"205000": 2,
+					"210000": 1,
+					"215000": 4,
+					"220000": 5,
+					"225000": 1,
+					"230000": 2,
+					"235000": 1,
+					"240000": 3,
+					"245000": 0,
+					"250000": 303
+				},
+				"total_found": 606,
+				"total_page_number": 68
+			},
+			"meta_data_student": {
+				"has_next_page": false,
+				"has_previous_page": false,
+				"num_pages": 0
+			}
+		}
+	}
+}

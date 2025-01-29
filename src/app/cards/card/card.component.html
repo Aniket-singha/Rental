@@ -1,0 +1,7 @@
+<a [routerLink]="['/find-property/gb-london',data.source_id]">
+<div class="card">
+  <img [src]="imgsrc" alt="Card Image" class="card-image">
+  <p class="card-description">{{data.title}}</p>
+  <p class="card-short-description">{{data.currency_code}}{{data.price}}{{data.billing_cycle}}</p>
+</div>
+</a>

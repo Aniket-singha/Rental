@@ -1,0 +1,68 @@
+{
+    "data":[
+    {
+      "key": "firstName",
+      "type": "input",
+      "templateOptions": {
+        "label": "First Name",
+        "placeholder": "Enter your first name",
+        "required": true
+      }
+    },
+    {
+      "key": "lastName",
+      "type": "input",
+      "templateOptions": {
+        "label": "Last Name",
+        "placeholder": "Enter your last name",
+        "required": true
+      }
+    },
+    {
+      "key": "email",
+      "type": "input",
+      "templateOptions": {
+        "label": "Email ID",
+        "type": "email",
+        "placeholder": "Enter your email",
+        "required": true
+      }
+    },
+    {
+      "key": "countryCode",
+      "type": "select",
+      "templateOptions": {
+        "label": "Country Code",
+        "placeholder": "Select your country code",
+        "options": [
+          { "label": "+1 (USA)", "value": "+1" },
+          { "label": "+44 (UK)", "value": "+44" },
+          { "label": "+91 (India)", "value": "+91" },
+          { "label": "+61 (Australia)", "value": "+61" }
+        ],
+        "required": true
+      }
+    },
+    {
+      "key": "phoneNumber",
+      "type": "input",
+      "templateOptions": {
+        "label": "Phone Number",
+        "type": "tel",
+        "placeholder": "Enter your phone number",
+        "pattern": "^[0-9]{10,15}$",
+        "required": true
+      }
+    },
+    {
+      "key": "message",
+      "type": "textarea",
+      "templateOptions": {
+        "label": "Message",
+        "placeholder": "Enter your message",
+        "rows": 5,
+        "required": true
+      }
+    }
+  ]
+}

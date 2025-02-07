@@ -7,6 +7,10 @@
         <a routerLink="/">Home</a>
         <a routerLink="/find-properties">Find Properties</a>
         <a routerLink="/contact-us">Contact Us</a>
-        <a routerLink="/">Login</a>
+        <a routerLink="/login-user">Login as User</a>
+        <a routerLink="/login-admin">Login as Admin</a>
+        @if(curruserName()){
+            <button (click)="onClick()" class="button">Logout</button>
+        }
     </div>
 </div>

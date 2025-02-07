@@ -30,8 +30,32 @@ input {
     border-radius: 4px;
     transition: background-color 1s;
 }
+.menu p {
+    text-decoration: none;
+    color: #131414;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 1s;
+}
 
 .menu a:hover {
     background-color: #e2e6ea;
 }
 
+
+/* Basic Button */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  

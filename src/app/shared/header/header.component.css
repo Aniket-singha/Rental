@@ -39,10 +39,41 @@ input {
     transition: background-color 1s;
 }
 
+.mat-mdc-menu-item{
+    background-color: white;
+}
+a{
+    text-decoration: none;
+    color: #131414;
+   
+}
+button[_ngcontent-ng-c1282092980] {
+    background-color: #fcfcfc;
+    color: rgb(0, 0, 0);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family:Roboto, "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    font-weight: 200;
+  }
+
+  .mat-mdc-menu-item-text {
+    font-size: 16px;
+    font-weight: 200;
+    font-family:Roboto,Helvetica Neue, sans-serif;
+  }
+
+ 
+
 .menu a:hover {
     background-color: #e2e6ea;
 }
 
+.menu a.active {
+    color:rgb(247, 148, 36);
+}
 
 /* Basic Button */
 button {
@@ -58,4 +89,3 @@ button {
   button:hover {
     background-color: #45a049;
   }
-  

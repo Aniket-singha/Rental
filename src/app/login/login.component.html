@@ -1,0 +1,138 @@
+<div class="main">
+<img [style.height]="!register?'80px':'50px'" [style.width]="!register?'90px':'60px'" src="https://rentospace.com/assets/Branding.png" />
+<p [style.padding-top]="!register ? '20px' : '0'">{{!otpsent?(register ? 'REGISTER' : 'LOG IN'):('Verify OTP')}}</p>
+<div class="black-line"></div>
+
+
+@if(!otpsent){
+<form [formGroup]="form" (ngSubmit)="onsubmit()">
+
+    @if(!register) {
+    @if(!form.get('loginWithEmail')?.value) {
+    <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+    <select formControlName="dialCode" style="height:52px; width:80%; align-self:flex-start;">
+        <option value="+91">+91</option>
+        <option value="+1">+1</option>
+        <option value="+44">+44</option>
+        <option value="+61">+61</option>
+        <option value="+81">+81</option>
+        <option value="+49">+49</option>
+        <option value="+33">+33</option>
+        <option value="+86">+86</option>
+        <option value="+7">+7</option>
+        <option value="+55">+55</option>
+        <option value="+34">+34</option>
+        <option value="+39">+39</option>
+        <option value="+27">+27</option>
+        <option value="+64">+64</option>
+        <option value="+82">+82</option>
+        <option value="+52">+52</option>
+        <option value="+31">+31</option>
+        <option value="+47">+47</option>
+        <option value="+46">+46</option>
+        <option value="+41">+41</option>
+    </select>
+    <div *ngIf="form.get('dialCode')?.touched && form.get('dialCode')?.invalid" class="error-message">
+        {{ getErrorMessage('dialCode') }}
+      </div>
+</div> 
+<div style="display:flex; flex-direction: column; align-items: flex-start;">  
+    <input formControlName="number" style="height: 52px; width: 80%;  align-self: flex-start;" type="text" placeholder="Mobile Number*" />
+    <div *ngIf="form.get('number')?.touched && form.get('number')?.invalid" class="error-message">
+        {{ getErrorMessage('number') }}
+      </div>
+</div>
+    }
+    @else {
+    <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+    <input formControlName="emailId" style="height: 52px; width: 80%;  align-self: flex-start;" type="text" placeholder="EmailId*" />
+    <div *ngIf="form.get('emailId')?.touched && form.get('emailId')?.invalid" class="error-message">
+        {{ getErrorMessage('emailId') }}
+      </div>
+    </div>
+    }
+    <div style="align-self: flex-start;"><input formControlName="loginWithEmail" type="checkbox"> <span style="padding-left: 5px;">Login with email</span></div>
+ }
+ @else {
+    <div style="display: flex; justify-content: flex-start; gap: 15px;">
+        <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+            <input formControlName="firstName" style="height: 52px; width: 175px;" type="text" placeholder="First Name*" />
+            <div *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid" class="error-message">
+                {{ getErrorMessage('firstName') }}
+              </div>
+           </div>
+        <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+            <input formControlName="lastName" style="height: 52px; width: 175px;" type="text" placeholder="Last Name*"  />
+            <div *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid" class="error-message">
+                {{ getErrorMessage('lastName') }}
+              </div>
+        </div>  
+    </div>
+    <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+        <input formControlName="emailId" style="height: 52px; width: 80%;  align-self: flex-start;" type="text" placeholder="Email ID*" />
+        <div *ngIf="form.get('emailId')?.touched && form.get('emailId')?.invalid" class="error-message">
+            {{ getErrorMessage('emailId') }}
+          </div>
+        </div>
+    <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+        <select formControlName="dialCode" style="height:52px; width:80%; align-self:flex-start;">
+            <option value="" disabled>Country Code*</option>
+            <option value="+91">+91</option>
+            <option value="+1">+1</option>
+            <option value="+44">+44</option>
+            <option value="+61">+61</option>
+            <option value="+81">+81</option>
+            <option value="+49">+49</option>
+            <option value="+33">+33</option>
+            <option value="+86">+86</option>
+            <option value="+7">+7</option>
+            <option value="+55">+55</option>
+            <option value="+34">+34</option>
+            <option value="+39">+39</option>
+            <option value="+27">+27</option>
+            <option value="+64">+64</option>
+            <option value="+82">+82</option>
+            <option value="+52">+52</option>
+            <option value="+31">+31</option>
+            <option value="+47">+47</option>
+            <option value="+46">+46</option>
+            <option value="+41">+41</option>
+        </select>
+        <div *ngIf="form.get('dialCode')?.touched && form.get('dialCode')?.invalid" class="error-message">
+            {{ getErrorMessage('dialCode') }}
+          </div>
+       </div>
+    <div style="display:flex; flex-direction: column; align-items: flex-start;">      
+        <input formControlName="number" style="height: 52px; width: 80%;  align-self: flex-start;" type="text" placeholder="Mobile Number*" />
+        <div *ngIf="form.get('number')?.touched && form.get('number')?.invalid" class="error-message">
+            {{ getErrorMessage('number') }}
+          </div> 
+    </div> 
+        <div style="align-self: flex-start;">
+            <input formControlName="above18" type="checkbox" />
+            <span style="padding-left: 5px;">I confirm that I am above 18 years.</span>
+        </div>
+ }
+ <button 
+      type="submit" 
+      [disabled]="form.invalid" 
+      [ngClass]="{'disabled-button': form.invalid, 'enabled-button': form.valid}">
+      {{register ? 'REGISTER' : 'LOG IN'}}
+    </button>
+ <a (click)="switcher()">{{!register ? 'Click here to REGISTER' : 'Click here to LOGIN'}}</a>
+</form>
+}
+@else {
+    <form [formGroup]="otpForm" (ngSubmit)="onSubmit2()">
+        <div style="display:flex; flex-direction: column; align-items: flex-start;">  
+            <input formControlName="otp" style="height: 52px; width: 80%;  align-self: flex-start;" type="text" placeholder="Enter OTP*" />
+        </div>  
+      <div style="display:flex; gap:5px; width:80%"> 
+     <button style="background-color: rgb(247, 148, 36);" type="submit"  >VERIFY</button>
+     <button>CANCEL</button>
+      </div>
+    </form>
+}
+
+<p style="justify-self:flex-end; font-size: 12px; font-weight:400;">By Clicking ‘Log in/register’ button you are agreeing to T&C of RentOSpace</p>
+</div>

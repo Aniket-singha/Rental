@@ -1,28 +1,40 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { AuthService } from '../../auth.service';
+import { RouterLink, RouterModule } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { LoginComponent } from '../../login/login.component';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrl: './header.component.css',
+  standalone: false,
 })
 export class HeaderComponent {
-  curruserName=signal('');
-  private authService=inject(AuthService)
   
- 
+  currUser:any=null;
+
+  constructor(private readonly dialog: MatDialog) { }
+  
 
   ngOnInit() {
-    const currentUser=localStorage.getItem('currentUser');
-    if(currentUser){
-      this.curruserName.set(JSON.parse(currentUser).username)
+    if(localStorage.getItem('currUser')){
+      this.currUser=JSON.parse(localStorage.getItem('currUser')||'{}')
     }
   }
-  onClick(){
-    this.authService.logout();
-    
-  }
 
+  
+
+  loginAsUser() {
+
+    const dialogRef = this.dialog.open(LoginComponent, {
+      height:'550px',
+      width: '500px',
+      data:{}
+    });
+
+    dialogRef.afterClosed().subscribe(data => {
+      // Handle after dialog close
+    });
+  }
 }
+

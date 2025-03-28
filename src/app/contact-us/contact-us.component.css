@@ -1,79 +1,67 @@
-h1, h2 {
-    text-align: center;
-    color: rgb(59, 42, 10);
-    margin-bottom: 20px;
-  }
-  
-  
-  .form-grid {
-    display: grid;
-    gap: 15px;
-    max-width: 600px;
-    margin: auto;
-    grid-template-columns: 1fr 1fr;
-  }
-  
-  .form-grid textarea {
-    grid-column: span 2;
-  }
-  
-  
-  input[type="text"],
-  input[type="email"],
-  textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 14px;
-    box-sizing: border-box;
-  }
-  
-  textarea {
-    resize: none;
-    min-height: 80px;
-  }
-  
+form{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  gap:15px;
+  margin-bottom: 10px;
+}
 
-  button {
-    grid-column: span 2;
-    padding: 10px 0;
-    background-color: rgb(65, 43, 3);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: darkorange;
-  }
-  
-  button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
-  
- 
-  label {
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .error-message {
-    color: red;
-    font-size: 12px;
-  }
-  
-  @media (max-width: 600px) {
-    .form-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    button {
-      grid-column: 1;
-    }
-  }
+h2{
+  font-size: 48px;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  text-decoration: underline;
+  text-decoration-color: rgb(247, 148, 36);
+  text-decoration-thickness: 5px;
+} 
+
+input{
+  width:100%;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+input:focus{
+  outline:none;
+ border: 2px solid rgb(247, 148, 36) ;
+}
+
+textarea:focus{
+  outline:none;
+ border: 2px solid rgb(247, 148, 36) ;
+}
+
+select{
+  width:100%;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: white;
+}
+
+input.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid {
+  border: 2px solid red;
+}
+
+button{
+  width:10%;
+  height: 30px;
+  background-color: rgb(247, 148, 36);
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+ border-radius: 10px;
+}
+
+input,
+textarea {
+  height: 50px; /* Set a consistent height for input and textarea */
+  box-sizing: border-box; /* Ensure padding and border are included in the height */
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 2px; /* Add spacing between the field and the error message */
+  height: 14px; /* Reserve space for the error message to prevent layout shift */
+}

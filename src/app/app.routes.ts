@@ -4,9 +4,15 @@ import { CardsComponent } from './cards/cards.component';
 import { PropertyComponent } from './property/property.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { inject } from '@angular/core';
-import { AuthService } from './auth.service';
-import { LoginuserComponent } from './loginuser/loginuser.component';
-import { LoginadminComponent } from './loginadmin/loginadmin.component';
+import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { AdminloginComponent } from './admin/adminlogin/adminlogin.component';
+import { FindPropertyComponent } from './find-property/find-property.component';
+import { UserComponent } from './user/user.component';
+import { BookingsComponent } from './user/bookings/bookings.component';
+import { PersonalDetailsComponent } from './user/personal-details/personal-details.component';
+import { WishlistComponent } from './user/wishlist/wishlist.component';
+import { AccountComponent } from './user/account/account.component';
 
 const dummyCanUserMatch:CanMatchFn=(route,segments)=>{
   const currentUserString=localStorage.getItem('currentUser');
@@ -17,6 +23,7 @@ const dummyCanUserMatch:CanMatchFn=(route,segments)=>{
     }
     return false;
 }
+
 const dummyCanAdminMatch:CanMatchFn=(route,segments)=>{
     const currentUserString=localStorage.getItem('currentUser');
     if(!currentUserString) return true;  
@@ -30,29 +37,49 @@ const dummyCanAdminMatch:CanMatchFn=(route,segments)=>{
 export const routes: Routes = [
   {
     path: '',
-    component: CardsComponent,
+    component: HomeComponent,
   },
   {
     path: 'find-properties',
-    component: CardsComponent,
+    component: FindPropertyComponent,
+  },
+  // WLOQZ751BM6X
+  {
+    path: 'admin',
+   
+    component:AdminComponent,
+    children:[
+      {
+        path:'login',
+        component:AdminloginComponent
+      }
+    ]
   },
   {
-    path: 'find-property/gb-london/:propertyId',
-    component: PropertyComponent,
+    path:'users',
+    component:UserComponent,
+    children:[
+      {
+        path:'bookings',
+        component:BookingsComponent
+      },
+      {
+        path:'personal-details',
+        component:PersonalDetailsComponent
+      },
+      {
+        path:'wishlist',
+        component:WishlistComponent
+      },
+      {
+        path:'account',
+        component:AccountComponent
+      }
+    ]
   },
   { 
-    path: 'contact-us', 
+    path: 'contact', 
     component: ContactUsComponent,
   },
-  { 
-    path:'login-user',
-    component:LoginuserComponent,
-    canMatch:[dummyCanUserMatch]
-  },
-  { 
-    path:'login-admin',
-    component:LoginadminComponent,
-    canMatch:[dummyCanAdminMatch]
-  },
-  
+
 ];

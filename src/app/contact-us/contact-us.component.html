@@ -1,5 +1,75 @@
-<h2>Contact us</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
-  <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
-  <button mat-raised-button type="submit" [disabled]="form.invalid">Submit</button>
-</form>
+<app-header></app-header>
+<div class="main">
+  <form [formGroup]="form" (ngSubmit)="onsubmit()">
+    <h2>Contact us</h2>
+
+    <div style="width:65%; display:flex; height:57px; gap:3%">
+      <div style="width: 50%;">
+        <input formControlName="firstName" type="text" placeholder="First Name*"  />
+        <div *ngIf="form.get('firstName')?.touched && form.get('firstName')?.invalid" class="error-message">
+          {{ getErrorMessage('firstName') }}
+        </div>
+      </div>
+      <div style="width: 50%;">
+        <input formControlName="lastName" type="text" placeholder="Last Name*" />
+        <div *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid" class="error-message">
+          {{ getErrorMessage('lastName') }}
+        </div>
+      </div>
+    </div>
+
+    <div style="width:65%; gap:3%; display:flex; height:57px">
+      <div style="width: 50%;">
+        <input formControlName="emailId" type="email" placeholder="Email ID*" required />
+        <div *ngIf="form.get('emailId')?.touched && form.get('emailId')?.invalid" class="error-message">
+          {{ getErrorMessage('emailId') }}
+        </div>
+      </div>
+      <div style="width: 11%;">
+        <select style="height: 55px;" formControlName="dialCode" required>
+          <option value="+91" selected>+91</option>
+          <option value="+1">+1</option>
+          <option value="+44">+44</option>
+          <option value="+61">+61</option>
+          <option value="+81">+81</option>
+          <option value="+49">+49</option>
+          <option value="+33">+33</option>
+          <option value="+86">+86</option>
+          <option value="+7">+7</option>
+          <option value="+55">+55</option>
+          <option value="+34">+34</option>
+          <option value="+39">+39</option>
+          <option value="+27">+27</option>
+          <option value="+64">+64</option>
+          <option value="+82">+82</option>
+          <option value="+52">+52</option>
+          <option value="+31">+31</option>
+          <option value="+47">+47</option>
+          <option value="+46">+46</option>
+          <option value="+41">+41</option>
+        </select>
+        <div *ngIf="form.get('dialCode')?.touched && form.get('dialCode')?.invalid" class="error-message">
+          {{ getErrorMessage('dialCode') }}
+        </div>
+      </div>
+      <div style="width: 35%;">
+        <input formControlName="number" type="text" placeholder="Mobile Number*" required />
+        <div *ngIf="form.get('number')?.touched && form.get('number')?.invalid" class="error-message">
+          {{ getErrorMessage('number') }}
+        </div>
+      </div>
+    </div>
+
+    <div style="width:65%;">
+      <textarea formControlName="message" style="font-family: MS Shell Dlg \32; font-size:16px; width:100%; height:200px;" placeholder="Message*" required></textarea>
+      <div *ngIf="form.get('message')?.touched && form.get('message')?.invalid" class="error-message">
+        {{ getErrorMessage('message') }}
+      </div>
+    </div>
+
+    <div style="width:65%; display:flex; justify-content: flex-end;">
+      <button type="submit">SEND</button>
+    </div>
+  </form>
+</div>
+<app-footer></app-footer>

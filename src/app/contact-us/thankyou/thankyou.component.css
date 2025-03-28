@@ -1,0 +1,23 @@
+.main {
+    
+    background-image: url('https://rentospace.com/media/img-dlg.png');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+   
+}
+p{
+    font-family: Roboto, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    line-height: 28.8px;
+    margin-bottom: 30px;
+    color: rgb(112, 112, 112);
+    text-align: center;
+}

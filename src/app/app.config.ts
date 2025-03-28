@@ -7,11 +7,11 @@ import { FormlyMaterialModule } from '@ngx-formly/material';
 
 export const appConfig:ApplicationConfig={
     providers:[
-        provideRouter(routes,withComponentInputBinding()), 
+        provideRouter(routes,withComponentInputBinding()),
         provideAnimationsAsync(),
         importProvidersFrom([
             FormlyModule.forRoot(),
             FormlyMaterialModule
-        ])
+        ]), provideAnimationsAsync()
     ]
 }

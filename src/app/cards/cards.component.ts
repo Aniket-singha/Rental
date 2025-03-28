@@ -3,10 +3,10 @@ import { CardComponent } from './card/card.component';
 import { NgFor } from '@angular/common';
 
 @Component({
-  selector: 'app-cards',
-  imports: [CardComponent,NgFor],
-  templateUrl: './cards.component.html',
-  styleUrl: './cards.component.css'
+  selector:'app-cards',
+  templateUrl:'./cards.component.html',
+  standalone: false,
+  styleUrl:'./cards.component.css'
 })
 
 export class CardsComponent {

@@ -2,15 +2,33 @@
     <div>
         <img src="https://rentospace.com/assets/Branding.png"/>
     </div>
-    <input  type="text" placeholder="Search by city name" />
+    <input type="text" placeholder="Search by city name" />
     <div class="menu">
-        <a routerLink="/">Home</a>
-        <a routerLink="/find-properties">Find Properties</a>
-        <a routerLink="/contact-us">Contact Us</a>
-        <a routerLink="/login-user">Login as User</a>
-        <a routerLink="/login-admin">Login as Admin</a>
-        @if(curruserName()){
-            <button (click)="onClick()" class="button">Logout</button>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        <a routerLink="/find-properties" routerLinkActive="active">Find Properties</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact Us</a>
+       
+
+        @if(!currUser){
+          <a (click)="loginAsUser()">Login</a>
+        }
+        @else{
+            <img [matMenuTriggerFor]="menu" style="height: 45px; width:45px" src="https://rentospace.com/assets/user.png"/>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <a routerLink="/users/bookings">Bookings</a>
+                </button>
+                <button mat-menu-item>  
+                    <a routerLink="/users/personal-details">Personal Details</a>
+                </button>
+                <button mat-menu-item>
+                    <a routerLink="/users/wishlist">My Wishlist</a>
+                </button>
+                <button mat-menu-item>
+                    <a routerLink="/users/account">Account settings</a>
+                </button>
+                <button mat-menu-item>Logout</button>  
+            </mat-menu>
         }
     </div>
 </div>
